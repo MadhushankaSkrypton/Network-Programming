@@ -1,9 +1,5 @@
-product_box=[]
 price_box=[]
 for i in range(10000):
-    product=str(input("Name of Product "+str(i+1)+" :"))
-    if product=='':
-        break
     while True:
         try:
             price=float(input("Product Price "+str(i+1)+" :"))
@@ -11,7 +7,7 @@ for i in range(10000):
         except ValueError:
             print("Please Enter a Numeric Value")
     
-    product_box.append(str(product))
+    
     price_box.append(float(price))
 total=sum(price_box)
 if total >5000 :
@@ -25,7 +21,6 @@ elif total <1000 :
 dis=total*discount/100.0
 net_price=total-dis
 text_file=open(" SavedData.txt" ,  "w")
-text_file.write(" Item Name: %s" % product_box )
 text_file.write(" Item Price: %s" % price_box )
 text_file.write(" Discount Precentage: %s" % discount )
 text_file.write(" Saved Price: %s" % dis )
